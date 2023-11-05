@@ -1,0 +1,21 @@
+<div>
+  {{#if this.oneArtist}}
+
+    {{#each this.oneArtist}}
+
+      <img src="{{this.images.[0].url}}" alt="artistpic" height="200px" />
+      <h4>{{this.name}}</h4>
+      <button><a href="/albums/{{this.id}}">View Albums</a></button> <br>
+
+    {{/each}}
+
+  {{else}}
+    <h3>Artist not found</h3>
+  {{/if}}
+</div>
+{{!-- Breakdown de lo que pasa en la linea 6:
+
+this : referido al objeto artist actual
+images : propiedad images dentro del objeto artist
+[0] :  accede al primer elemento del array
+.url : accede a la propiedad url del primer objeto imagen --}}
